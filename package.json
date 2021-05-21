@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "build": "tsc --project ./",
-    "dev": "nodemon app.ts"
+    "dev": "nodemon app.ts",
+    "start": "node app.js"
   },
   "author": "Yossi Shemesh",
   "license": "ISC",
