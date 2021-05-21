@@ -25,11 +25,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var dotenv = __importStar(require("dotenv"));
 var express_1 = __importDefault(require("express"));
 var path_1 = __importDefault(require("path"));
-dotenv.config({ path: __dirname + '.env' });
+dotenv.config({ path: __dirname + '../.env' });
 var app = express_1.default();
-// app.use(express.static('public'))
+app.use(express_1.default.static('public'));
 app.get('/', function (req, res) {
     res.sendFile(path_1.default.join(__dirname, 'public', 'projects', 'math-with-ofir', 'index.html'));
+});
+app.get('/style.css', function (req, res) {
+    res.sendFile(path_1.default.join(__dirname, 'public', 'projects', 'math-with-ofir', 'style.css'));
+});
+app.get('/script.js', function (req, res) {
+    res.sendFile(path_1.default.join(__dirname, 'public', 'projects', 'math-with-ofir', 'script.js'));
 });
 var PORT = process.env.PORT || 4000;
 app.listen(PORT, function () { return console.log('app listening on port ' + PORT); });
